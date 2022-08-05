@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Recruit Tech</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="company.css" rel="stylesheet" media="all">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="p-t-16">
+        <button class="btn btn--radius-3 btn--blue" type="submit" id="home">HOME</button>
+    </div>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                
+                
+                <div class="card-body">
+                    <h2 class="title">Personal Details</h2>
+                    <form method="POST">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="first_name" id="first_name">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" name="last_name" id="last_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Date of Birth</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 js-datepicker" type="text" name="birthday" id="dob">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <!--<input class="input--style-4" type="text" name="stream">-->
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select id = "gender" name="gender">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+                                            
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+        
+                                </div>
+                        </div>
+                       
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email" id="email">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="text" name="phone" id="phno">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Address</label>
+                            <input class="input--style-4" type="text" name="addressfield" id="address">
+                        </div>
+
+                       <!--
+                            <div class="input-group">
+                                <label class="label">Languages</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select id="lang" name="Languages">
+                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                        <option id="eng">English</option>
+                                        <option id="hin">Hindi</option>
+                                        <option id="mal">Malayalam</option>
+                                        <option id="otherlang">Other</option>
+
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        -->
+                            <!--<div class="input-group" style="display: none;">
+                                <input id="other-language-input" placeholder="enter other">
+                            </div>-->
+                    
+                        
+                        
+
+                        <div class="input-group">
+                            <label class="label">Qualifications</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="Qualifications" id="quali">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>Bachelor of Arts</option>
+                                    <option>Bachelor of Technology</option>
+                                    <option>Bachelor of Architecture</option>
+                                    <option>Bachelor of Business Administration</option>
+                                    <option>Master of Arts</option>
+                                    <option>Master of Technology</option>
+                                    <option>Master of Architecture</option>
+                                    <option>Master of Business Administration</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Experience</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="exp" id="experience">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                   
+                                    <option>Experienced</option>
+                                    <option>No preference</option>
+                                    <option>Fresher</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input1">
+                                    <label class="label">Years of Experience</label>
+                                    <input class="input--style-4" type="number" name="exp" id="other">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="input-group">
+                            <label class="label">Stream</label>
+                            <!--<input class="input--style-4" type="text" name="stream">-->
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select id = "stream" name="Stream">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option id="cs">Computer Science</option>
+                                    <option id="eee">Electrical and ELectronics</option>
+                                    <option id="ec">Electronics and Communication</option>
+                                    <option id="ch">Chemical</option>
+                                    <option id="me">Mechanical</option>
+                                    <option id="mechpro">Mechanical Producton</option>
+                                    <option id="auto">Automobile </option>
+                                    <option id="fin">Finance</option>
+                                    <option id="mgmt">Management</option>
+                                    <option id="mass">Mass Communication</option>
+                                    
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="input-group">
+                            <label class="label">Skills</label>
+                            <select name="skills" id="skills" multiple>
+                                <option id="HTML ">HTML & CSS</option>
+                                <option id="bootstap">BOOTSTRAP</option>
+                                <option id="flutter">JAVASCRIPT</option>
+                                <option id="reactjs">REACT.Js</option>
+                                <option id="mongodb">MONGODB</option>
+                                <option id="matlab">MATLAB</option>
+                                <option id="cadd">AUTOCAD</option>
+                                <option id="data">DATA ANALYSIS</option>
+                                <option id="statistics">STATISTICAL ANALYSIS</option>
+                                <option id="excel">MICROSOFT EXCEL</option>
+                                <option id="photoshop">PHOTOSHOP</option>
+                                <option id="django">DJANGO</option>
+                                <option id="">GRAPHIC DESIGNING</option>
+                                <option id="cloud">CLOUD</option>
+                                <option id="web">WEB DEVELOPMENT</option>
+                                <option id="app">APP DEVOLOPMENT</option>
+                                </select>
+                        </div>
+                        <!--<div>
+                            <label for="myfile">Choose file:</label>
+                            <input type="file" id="myfile" name="myfile">
+                        </div>-->
+                        
+                        <div class="p-t-16">
+                            <button class="btn btn--radius-3 btn--blue" type="submit" id="submit">Submit</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+    import { getFirestore,collection,getDocs,setDoc,doc,addDoc,getDoc,updateDoc} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
+    //import { set,ref } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBjvk_raLlFLyMEANUS_KBlp7-6yj615mM",
+        authDomain: "project-4d7bc.firebaseapp.com",
+        projectId: "project-4d7bc",
+        storageBucket: "project-4d7bc.appspot.com",
+        messagingSenderId: "519355369103",
+        appId: "1:519355369103:web:6cf899e7be6142489952fa",
+        measurementId: "G-GQLMTQ8EXF"
+      };
+      const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth=getAuth();
+      
+  const selected=[];
+ 
+
+      const first=document.querySelector('#first_name');
+        const last=document.querySelector('#last_name');
+        const dob=document.querySelector('#dob');
+        const gender=document.querySelector('#gender');
+        const experience=document.querySelector('#experience');
+        const other=document.querySelector('#other');
+        const quali=document.querySelector('#quali');
+        const stream=document.querySelector('#stream');
+        const address=document.querySelector('#address');
+        const phno=document.querySelector('#phno');
+        const email=document.querySelector('#email');
+       // selected=document.querySelector('#skills');
+       
+        //var first1=document.getElementById('first_name');
+
+      async function authen(){const vari=await auth.onAuthStateChanged(user=>{
+            if(user){
+                console.log(user.uid)
+                const u=user.uid;
+                async function getDocument(){
+                const docref=doc(db,'client-profile',u);
+                const doc1=await getDoc(docref)
+                if(doc1.exists())
+                {
+                    console.log(email.value)
+                    first.value=doc1.data().first_name;
+                    console.log(first.value)
+                    last.value=doc1.data().last_name;
+                    dob.value=doc1.data().date_of_birth;
+                    gender.value=doc1.data().gender;
+                    experience.value=doc1.data().experience;
+                    other.value=doc1.data().years_of_experience;
+                    quali.value=doc1.data().qualification
+                    stream.value=doc1.data().stream;
+                    address.value=doc1.data().address;
+                    phno.value=doc1.data().phno;
+                    email.value=doc1.data().email_id;
+                    
+                }
+                }
+                getDocument()
+            }})
+        }
+        authen().then(console.log(first.value))
+
+  const ref=collection(db,'client-profile');
+  
+submit.addEventListener('click',(e)=>{
+        e.preventDefault();
+      
+       
+           
+        
+        for(var option of document.querySelector('#skills').options)
+            {
+                if(option.selected)
+                {
+                    selected.push(option.value);
+                }
+            }
+        //const languages=document.querySelector('#languages').value;
+       /* const id1=document.querySelector('#i1').value;
+        const id2=document.querySelector('#i2').value;
+        const id3=document.querySelector('#i3').value;
+        const id4=document.querySelector('#i4').value;
+        const id5=document.querySelector('#i5').value;
+        console.log(male);
+       /* if(male!=null){
+            gender=male;
+        }
+        else if(female!=null)
+        {
+            gender=female;
+        }
+        else
+        {
+            gender=other;
+        }*/
+        auth.onAuthStateChanged(user=>{
+            if(user){
+                console.log(user.uid)
+                const u=user.uid;
+                async function refe(){const r=await updateDoc(doc(db,'client-profile',user.uid),{first_name:first.value,last_name:last.value,
+                    date_of_birth:dob.value,qualification:quali.value,stream:stream.value,address:address.value,conatct_number:phno.value,
+                    gender:gender.value,skills:selected,experience:experience.value,years_of_experience:other.value
+                })}
+               // var v=await ref;
+               refe().then("location.href=candidate.html")
+            }
+           
+        })
+    }
+    
+   
+    
+
+
+  )
+home.addEventListener('click',(e)=>
+location.href="candidate.html"
+)
+//getData().then(location.href="candidate.html");
+    
+</script>
+</html>
+
+</html>
+<!-- end document-->

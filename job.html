@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<head>
+
+    
+
+    <title>Job Profiles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/assets/favicon.ioo">
+    
+    <link rel="stylesheet"  href="./jp.css">
+    
+</head>
+
+<body bgcolor="#c2cad0">
+    <div class="topnav">
+        <a class="active" href="#Profile">
+            <input type="button" class="profile" id="profile" value="Profile">
+            <img src="profile.png" alt=""></a>
+       <!-- <a class="active" href="#Logout">
+            <input type="button" class="logout" id="logout" value="Logout">
+            <img src="profile.png" alt=""></a>-->
+        <a class="active" href="#Home">
+                <input type="button" class="home" id="home" value="Home">
+                <img src="profile.png" alt=""></a>
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    <!--<div id="contactForm">
+    
+        <h1>Keep in touch!</h1>
+        <small>I'll get back to you as quickly as possible</small>
+        
+        <form action="#">
+          <input placeholder="Name" type="text" required />
+          <input placeholder="Email" type="email" required />
+          <input placeholder="Subject" type="text" required />
+          <textarea placeholder="Comment"></textarea>
+          <input class="formBtn" type="submit" />
+          <input class="formBtn" type="reset" />
+        </form>
+    </div>*/-->
+    
+
+    <div id="card" class="card">
+
+</div>
+
+</body>
+
+
+        <script type="module">
+            
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+    import { getFirestore,collection,getDocs,setDoc,doc,addDoc,onSnapshot,getDoc} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
+    //import { set,ref } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBjvk_raLlFLyMEANUS_KBlp7-6yj615mM",
+        authDomain: "project-4d7bc.firebaseapp.com",
+        projectId: "project-4d7bc",
+        storageBucket: "project-4d7bc.appspot.com",
+        messagingSenderId: "519355369103",
+        appId: "1:519355369103:web:6cf899e7be6142489952fa",
+        measurementId: "G-GQLMTQ8EXF"
+      };
+      const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth=getAuth();
+  home.addEventListener('click',(e)=>
+  location.href="candidate.html" ) 
+    console.log("yes")        
+
+           
+
+//const jobList = document.querySelector('#jobList');
+
+// create element & render cafe
+function renderjobs(doc1,u){
+   /* let li = document.createElement('li');
+    let name = document.createElement('span');
+    //let city = document.createElement('span');
+    let button=document.createElement('button');
+    li.setAttribute('data-id', doc1.id);
+    name.textContent = doc1.id;
+   // city.textContent = doc1.data().;
+    button.textContent="apply";
+    button.type="submit";
+    button.id="submit";
+    //console.log(doc1.id);
+    li.appendChild(name);
+   // li.appendChild(city);
+    li.appendChild(button);*/
+    console.log("yyy")
+    var card1= document.querySelectorAll('#card');
+            let card_content=document.createElement('div');
+    card_content.class="card_content";
+   // card_content.style.background="red";
+    //card_content.style.border="10px black";
+   
+    let p=document.createElement('p');
+    p.textContent=doc1.id;
+    p.class="p";
+    p.classList.add("p");
+    let button=document.createElement('button');
+    button.textContent="Apply";
+    button.class="button";
+    button.classList.add("button");
+    button.type="submit";
+    let card_image=document.createElement('img');
+    card_image.class="card_image";
+    card_image.setAttribute('src','blue.jpg');
+    card_image.classList.add("card_image");
+
+    card_content.appendChild(card_image);
+
+        card_content.appendChild(p);
+        card_content.appendChild(button);
+       
+  card1[0].appendChild(card_content);
+  var c_stream,c_qual,c_exp,r_stream,r_qual,r_exp,c_len,r_len,score=0;
+  var r_skills = [];
+  var c_skills = [];
+  var cname,jname;
+    jname=doc1.id;
+    const colref=collection(db,'todos1');
+    const name1=document.querySelector('#name');
+    const button1=document.querySelector('button');
+    button.addEventListener('click',(e)=>
+    {
+      
+    async function GetADocument(){
+    var ref=doc(db,'todos1','name');
+    const docSnap=await getDoc(ref);
+    if(docSnap.exists()){
+        
+        cname=docSnap.data().name;
+        console.log(cname);
+        async function GetDocuments(){
+            let ref=doc(db,'company req',docSnap.data().name,docSnap.data().name,doc1.id);
+                //var ref=doc(db,'signup-company',u);
+                const docSnap1=await getDoc(ref);
+                if(docSnap1.exists()){
+                    console.log(docSnap1.data());
+                    r_stream = docSnap1.data().stream;
+                r_exp = docSnap1.data().years_of_experience;
+                r_qual = docSnap1.data().qualification; 
+                r_skills = docSnap1.data().skills;
+                r_len = r_skills.length;
+                }
+                else{
+                    alert("no such document");
+                }
+                 }
+                 GetDocuments()
+            
+
+
+
+        
+     
+    };
+    
+     }
+     
+
+     async function Getclientdata(){
+    var ref=doc(db,'client-profile',u);
+    const docSnap3=await getDoc(ref);
+    if(docSnap3.exists()){
+        button.textContent="applied";
+        button.disabled=true;
+        
+        //const client=setDoc(ref,{jobs:})
+        console.log(docSnap3.data());
+        c_stream = docSnap3.data().stream;
+            c_exp = docSnap3.data().years_of_experience;
+            //console.log(docSnap3.data().years_of_experience);
+            c_skills = docSnap3.data().skills;
+          c_len = c_skills.length;
+
+            c_qual = docSnap3.data().qualification;
+           
+   
+    }
+    else
+    {
+        alert("profile setup required")
+        profile.addEventListener('click',(e)=>
+  location.href="profile-candidate.html"
+  )
+    }
+   // console.log(c_exp)
+    }
+    async function New(){
+        const w=await GetADocument()
+const v=await Getclientdata()
+score = 0;
+
+for (let i = 0; i < c_len; i++)
+        {
+         
+            for (let j = 0; j < r_len; j++)
+                {
+                    if(c_skills[i] == r_skills[j])
+                        score+=5;
+                }
+        }
+if(c_stream == r_stream)
+         {
+            if(c_qual == r_qual)
+            {
+                if(c_exp >= r_exp)
+                {
+                const ref = setDoc(doc(db,'results',cname,jname,u),{points:score});
+                }
+               
+            }
+         }
+
+
+
+ }   
+New()
+
+
+    
+    })
+    //document.getElementById("button").onclick=function(){
+        //location.href="signup.html";
+        profile.addEventListener('click',(e)=>
+  location.href="profile-candidate.html")
+    
+    
+    //submit.addEventListener('click',(e)=>{
+    
+    //)
+
+   /* jobList.appendChild(li);
+    var toAdd = document.createDocumentFragment();
+
+    let div=document.createElement('div');
+    div.id=doc1.data().cid;
+    div.appendChild(name);
+    toAdd.appendChild(div);
+    jobList.appendChild(toAdd);*/
+    
+
+}
+
+// getting data
+auth.onAuthStateChanged(user=>{
+            if(user){
+                console.log(user.uid)
+
+                //const colref=collection(db,'client-profile');
+               
+                
+                const colref=collection(db,'todos1');
+                async function GetADocument(){
+    var ref=doc(db,'todos1','name');
+    const docSnap2=await getDoc(ref);
+    if(docSnap2.exists()){
+        console.log(docSnap2.data().name);
+        
+    
+      
+    let ref=collection(db,'company req',docSnap2.data().name,docSnap2.data().name);
+    console.log("comp")
+    onSnapshot(ref,(querySnapshot)=>
+    {
+     querySnapshot.forEach((doc)=>
+     {console.log(doc.id);
+     renderjobs(doc,user.uid);});
+     });
+    }
+     
+    };
+   
+    GetADocument(); 
+                 }
+                }
+                
+                
+    );
+
+
+
+
+          </script>
+
+        <script src="app.css"></script>
+    </body>
+</html>
+

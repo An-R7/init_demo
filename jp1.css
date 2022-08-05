@@ -1,0 +1,223 @@
+.company-list{
+    margin: 0 auto;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 40px;
+    font-family: sans-serif;
+    padding-top: 80px;
+}
+.company-list * {
+    box-sizing: border-box;
+}
+
+.card{
+    margin: 0 auto;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(225px, 1fr));;
+    gap: 40px;
+    font-family: sans-serif;
+    padding-top: 80px;
+    color:#f2f2f2;
+}
+.card * {
+    box-sizing: border-box;
+}
+
+.card{
+    box-shadow: 0,0,3px rgba(0,0,0,0.1);
+    
+}
+
+.card_image{
+    width: 100%;
+    height: 150px;
+    display: block;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+body{
+  background-color: rgb(4,4,36);
+}
+
+.card_content{
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4436;
+    border-bottom: 2px solid#141212;
+    color: #555555;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.card__content > p:first-of-type {
+    margin-top: 0;
+}
+
+.card__content > p:last-of-type {
+    margin-bottom: 0;
+}
+.button{
+  background-color: #f2f2f2;
+  color: #1d2023;
+  border-radius: 5px;
+  width: 50px;
+  height: 30px;
+  border-color: #1d2023;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #f2f2f2;
+  
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #1d2023;
+    overflow: hidden;
+    height:60px;
+    margin-top: 0px;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    
+    text-decoration: none;
+    font-size: 17px;
+    height:60px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav .profile:hover {
+    background-color: rgb(127, 192, 235);
+    
+  }
+  .topnav .logout:hover {
+    background-color: rgb(127, 192, 235);
+    
+  }
+
+  .topnav .home:hover {
+    background-color: rgb(127, 192, 235);
+    
+  }
+  
+  
+  /* Add a color to the active/current link */
+  .topnav .profile {
+    width: 100px;
+    height:40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    background-color: #1d2023;
+    color: white;
+    border-left-color: #03254c;
+    border-top-color: #1d2023;
+    border-bottom-color: #1d2023;
+    border-right-color: #1d2023; 
+  }
+  .topnav .logout {
+  
+    height:40px;
+    width: 100px;
+    background-color: #1d2023;
+    color: white;
+    border-left-color: #03254c;
+    border-top-color: #1d2023;
+    border-bottom-color: #1d2023;
+    border-right-color: #1d2023;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+  }
+
+  .topnav .home {
+    width:100px;
+    height:40px;
+    top:0px;
+    background-color: #1d2023;
+    color: white;
+    border-left-color: #f2f2f2;
+    border-top-color: #1d2023;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+  }
+
+  .newjob.newjob{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    background: #c2cad0;
+  }
+
+  #add {
+    margin: 4em auto;
+  width: 100px; 
+  height: 30px; 
+  line-height: 30px;
+  background: teal;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+  }
+
+  #add:hover { background: #666; }
+  #add:active { background: #444; }
+
+  #contactForm { 
+    display: none;
+  
+    border: 6px solid salmon; 
+    padding: 2em;
+    width: 400px;
+    text-align: center;
+    background: #fff;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%)
+    
+  }
+  
+  input, textarea { 
+    margin: .8em auto;
+    font-family: inherit; 
+    text-transform: inherit; 
+    font-size: inherit;
+    
+    display: block; 
+    width: 280px; 
+    padding: .4em;
+  }
+  textarea { height: 80px; resize: none; }
+  
+  .formBtn { 
+    width: 140px;
+    display: inline-block;
+    
+    background: teal;
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.2em;
+    border: none;
+    height: 30px;
+  }

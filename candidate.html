@@ -1,0 +1,169 @@
+
+  <!DOCTYPE html>
+    <head>
+    
+        
+    
+        <title>Job Profiles</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="/assets/favicon.ioo">
+        
+        <link rel="stylesheet"  href="./jp1.css">
+        
+    </head>
+    
+    <body>
+        <div class="topnav">
+            <a class="active" href="#Profile">
+                <input type="button" class="profile" id="profile" value="Profile">
+                <img src="profile.png" alt=""></a>
+                
+                <a class="active" href="#Logout">
+                    <input type="button" class="logout" id="logout" value="Logout">
+                    <img src="profile.png" alt=""></a>       
+            <!--<a href="#news">Logout</a>-->
+            
+        </div>
+      
+        
+        
+        
+       
+    
+        <div id="card" class="card">
+    
+    </div>
+
+</body>
+        <script type="module">
+            
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+    import { getFirestore,collection,getDocs,setDoc,doc,addDoc,updateDoc} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
+    //import { set,ref } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword,signOut } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBjvk_raLlFLyMEANUS_KBlp7-6yj615mM",
+        authDomain: "project-4d7bc.firebaseapp.com",
+        projectId: "project-4d7bc",
+        storageBucket: "project-4d7bc.appspot.com",
+        messagingSenderId: "519355369103",
+        appId: "1:519355369103:web:6cf899e7be6142489952fa",
+        measurementId: "G-GQLMTQ8EXF"
+      };
+      const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth=getAuth();
+  profile.addEventListener('click',(e)=>
+  location.href="profile-candidate.html"
+  )
+  logout.addEventListener('click',(e)=>{
+                async function signing(){const refer=await signOut(auth).then(() => {
+                 alert("sign-out succesful")
+                    }).catch((error) => {
+                     alert("try again")
+                     });
+                     location.href="sample.html"
+                    }
+                    signing()
+                })      
+            
+
+           
+
+//const card = document.querySelector('#card');
+
+// create element & render cafe
+function renderCompany(doc1){
+   /* let li = document.createElement('li');
+    let name = document.createElement('span');
+    let city = document.createElement('span');
+    let button=document.createElement('button');
+    li.setAttribute('data-id', doc1.id);
+    name.textContent = doc1.data().cname;
+    city.textContent = doc1.data().cid;
+    button.textContent="open";
+    button.type="submit";
+    button.id="submit";
+    console.log(doc1.id);
+    li.appendChild(name);
+    li.appendChild(city);
+    li.appendChild(button);*/
+    var card1= document.querySelectorAll('#card');
+            let card_content=document.createElement('div');
+    card_content.class="card_content";
+   // card_content.style.background="red";
+    //card_content.style.border="10px black";
+   
+    let p=document.createElement('p');
+    p.textContent=doc1.data().cname;
+    p.class="p";
+    let button=document.createElement('button');
+    button.textContent="open";
+    button.class="button";
+    let card_image=document.createElement('img');
+    card_image.class="card_image";
+    card_image.classList.add("card_image");
+    card_image.setAttribute('src','login.jpeg');
+    const colref=collection(db,'todos1');
+    const name1=document.querySelector('#name');
+    button.addEventListener('click',(e)=>
+    {async function yes(){
+        console.log(doc1.data().cname);
+    const ref=await updateDoc(doc(db,'todos1','name'),{name:doc1.data().cname})
+    location.href="job.html";
+    }
+    yes()
+    })
+    card_content.appendChild(card_image);
+
+        card_content.appendChild(p);
+        card_content.appendChild(button);
+       
+  card1[0].appendChild(card_content);
+
+
+    
+
+}
+    //console.log(doc1.data().cname)
+    //console.log("doc1.data().cname")
+    
+    //document.getElementById("button").onclick=function(){
+        //location.href="signup.html";
+    
+    
+    
+    //submit.addEventListener('click',(e)=>{
+    
+    //)
+
+   /* companyList.appendChild(li);
+    var toAdd = document.createDocumentFragment();
+
+    let div=document.createElement('div');
+    div.id=doc1.data().cid;
+    div.appendChild(name);
+    toAdd.appendChild(div);
+    companyList.appendChild(toAdd);*/
+
+// getting data
+const ref=collection(db,'signup-company')
+getDocs(ref).then((snapshot)=>
+{
+    snapshot.docs.forEach((doc)=>{
+        renderCompany(doc);
+    }
+    )
+})
+
+          </script>
+
+        <script src="app.css"></script>
+    
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="comp.css">
+
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar top -->
+    <div class="navbar-top">
+        <div class="title">
+            <h1>PROFILE</h1>
+        </div>
+       <!-- <input type="button" class="btn btn--radius-3 btn--blue" id="sign" value="logout">-->
+
+    
+    </div>
+    <!-- End -->
+
+    <!-- Sidenav -->
+   
+        
+            
+              
+                
+                
+                <br><br>
+
+                <br>             
+                <br>
+                <a href="#profile" class="active">Profile</a><br><br>
+                <a href="#home" id="home">Home</a>    
+                
+                <script>
+                    document.getElementById("home").onclick=function()
+                    {
+                      location.href="companyjob.html"
+                    }
+                  </script>
+               
+              
+       
+
+    <!-- End -->
+
+    <!-- Main -->
+    <div class="main">
+        
+        <div class="card">
+            <div class="card-body">
+                
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><div>Company Name</div></td>
+                            <td>:</td>
+                            <td><input id="Name" contenteditable></input></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><div>Company ID</div></td>
+                            <td>:</td>
+                            <td><input id="ID" contenteditable></input></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><div >Email id</div></td>
+                            <td>:</td>
+                            <td><input id="email_id" contenteditable></input></td>
+                            
+                            
+                        </tr>
+                        <tr>
+                            <td><div>Username</div></td>
+                            <td>:</td>
+                            <td><input id="Username" contenteditable></input></td>
+                           
+                        </tr>
+                        <tr>
+                            <td><div >Contact number</div></td>
+                            <td>:</td>
+                            <td><input id="contact_number" contenteditable ></input></td>
+                            
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+       
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+</body>
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+  import { getFirestore,collection,getDoc,setDoc,doc,addDoc,getDocs} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
+  //import { set,ref } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword,signOut } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+      apiKey: "AIzaSyBjvk_raLlFLyMEANUS_KBlp7-6yj615mM",
+      authDomain: "project-4d7bc.firebaseapp.com",
+      projectId: "project-4d7bc",
+      storageBucket: "project-4d7bc.appspot.com",
+      messagingSenderId: "519355369103",
+      appId: "1:519355369103:web:6cf899e7be6142489952fa",
+      measurementId: "G-GQLMTQ8EXF"
+    };
+  
+  let cname;
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth=getAuth();
+  const ref=collection(db,'signup-company');
+  
+        getDocs(ref).then((snapshot)=>{
+        let list=[]
+    snapshot.docs.forEach((doc)=>{
+        list.push({...doc.data()})
+        
+    })
+    console.log(list)
+})
+    
+    
+  auth.onAuthStateChanged(user=>{
+            if(user){
+                console.log(user.uid)
+                const u=user.uid;
+                sign.addEventListener('click',(e)=>{
+                async function signing(){const refer=await signOut(auth).then(() => {
+                 alert("sign-out succesful")
+                    }).catch((error) => {
+                     alert("try again")
+                     });
+                     location.href="login.html"
+                    }
+                    signing()
+                })
+
+                async function GetADocument(){
+                var ref=doc(db,'signup-company',u);
+                const docSnap=await getDoc(ref);
+                if(docSnap.exists()){
+                    document.querySelector('#Name').value=docSnap.data().cname;
+                    ID.value=docSnap.data().cid;
+                    Username.value=docSnap.data().username;
+                    contact_number.value=docSnap.data().contactnumber;
+                    email_id.value=docSnap.data().email_id;
+                }
+                else{
+                    alert("no such document");
+                }
+                 }
+                 GetADocument()
+            
+}})
+
+
+
+
+    
+  /*const docRef=doc(db,'todos','new');*/
+  
+  
+  </script>
+</html>

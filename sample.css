@@ -1,0 +1,47 @@
+    
+    body{background-color: rgb(4, 4, 36);}
+    .container {
+    height: 200px;
+    position: relative;
+    border-color: transparent;
+    
+    }
+    .head{
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        font-size: 35px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: azure;
+    }
+    .vertical-center {
+    margin-top: -30px;
+    margin-left: -140px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    }
+
+   .client{
+        background-color: grey;
+        color: white;
+        border: none;
+        height: 70px;
+        width: 150px;
+        border-radius: 18px;
+        cursor: pointer;
+        font-style: bold;
+        font-size: 15px;
+        transition: box-shadow 0.15s;
+        
+
+    }
+    .client:hover{
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+
+
+    

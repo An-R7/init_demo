@@ -2,33 +2,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="sample.css" rel="stylesheet" media="all">
-<style>
-    body {
-      background-image: url('https://media.istockphoto.com/photos/selecting-person-and-building-team-business-people-relationship-picture-id1140300365?k=20&m=1140300365&s=612x612&w=0&h=NYTpN2E1CQTFcz6L5ea9eU8ospKgsVkY2LwGwKcIEGY=');
-    }
-    </style>
+
 <body>
+    <div class="head">
+
+        <h1>Recruit Tech</h1>
+    </div>
     
     <div class="container">
         
         <div class="vertical-center">
             <button class="client" id="client">
-                <script>
-                    client.addEventListener('click',(e)=>{
-                        location.href="login-candidate.html";
-                    }
-                    )
-                </script>
                 CANDIDATE
-            </button>
-            <button class="client" id="company">
                 <script>
-                    company.addEventListener('click',(e)=>{
-                        location.href="login-candidate.html";
-                    }
-                    )
+                    client.addEventListener('click',(e)=>
+                    location.href="login-candidate.html")
                 </script>
+            </button>
+            <tb></tb>
+            <button class="client" id="company">
                 COMPANY
+                <script>
+                    company.addEventListener('click',(e)=>
+                    location.href="login.html")
+                </script>
             </button>
     
             </div>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Recruit Tech</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="company.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="p-t-16">
+        <button class="btn btn--radius-3 btn--blue" type="submit" id="home">HOME</button>
+    </div>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                
+                <div class="card-body">
+                    <h2 class="title">Job Requirements</h2>
+                    <form method="POST">
+                        <div class="input-group">
+                            <label class="label">Job Name</label>
+                        <input type="text" class="input--style-4" id="jobname" name="job">
+                    </div>
+                    
+
+                        <div class="input-group">
+                            <label class="label">Qualifications</label>
+                           <!-- <input class="input--style-4" type="text" name="qualifications">-->
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select id= "quali" name="Qualifications">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option>Bachelor of Arts</option>
+                                    <option>Bachelor of Technology</option>
+                                    <option>Bachelor of Architecture</option>
+                                    <option>Bachelor of Business Administration</option>
+                                    <option>Master of Arts</option>
+                                    <option>Master of Technology</option>
+                                    <option>Master of Architecture</option>
+                                    <option>Master of Business Administration</option>
+                                    
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                        <div class="input-group">
+
+                            <label class="label">Stream</label>
+                            <!--<input class="input--style-4" type="text" name="stream">-->
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select id = "stream" name="Stream">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option id="cs">Computer Science</option>
+                                    <option id="eee">Electrical and ELectronics</option>
+                                    <option id="ec">Electronics and Communication</option>
+                                    <option id="ch">Chemical</option>
+                                    <option id="me">Mechanical</option>
+                                    <option id="mechpro">Mechanical Producton</option>
+                                    <option id="auto">Automobile </option>
+                                    <option id="fin">Finance</option>
+                                    <option id="mgmt">Management</option>
+                                    <option id="mass">Mass Communication</option>
+                                    
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                        <div class="container">
+                          
+                            <label class="label">Skills</label>
+                            <select name="skills" id="skills" multiple>
+                                <option id="HTML ">HTML & CSS</option>
+                                <option id="bootstap">BOOTSTRAP</option>
+                                <option id="flutter">JAVASCRIPT</option>
+                                <option id="reactjs">REACT.Js</option>
+                                <option id="mongodb">MONGODB</option>
+                                <option id="matlab">MATLAB</option>
+                                <option id="cadd">AUTOCAD</option>
+                                <option id="data">DATA ANALYSIS</option>
+                                <option id="statistics">STATISTICAL ANALYSIS</option>
+                                <option id="excel">MICROSOFT EXCEL</option>
+                                <option id="photoshop">PHOTOSHOP</option>
+                                <option id="django">DJANGO</option>
+                                <option id="">GRAPHIC DESIGNING</option>
+                                <option id="cloud">CLOUD</option>
+                                <option id="web">WEB DEVELOPMENT</option>
+                                <option id="app">APP DEVOLOPMENT</option>
+
+
+
+                            </select>
+                        </div>
+                        
+                        
+                           <br>
+
+                    
+                            <!--<input class="input--style-4" type="text" name="skills">-->
+                          <div class="col-2">
+                            <div class="input1">
+                                <label class="label">Preference</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="Experience" id="preference">
+                                        <option disabled="disabled" selected="selected">Choose option</option>
+                                        <option id="fresher">Fresher</option>
+                                        <option id="experienced">Experienced</option>
+                                        <option id="noPreference">No preference</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input1">
+                                    <label class="label">Years of Experience</label>
+                                    <input class="input--style-4" type="number" name="exp" id="year">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <br>
+                        
+                        <div class="input1">
+                            <button class="btn btn--radius-2 btn--blue" type="submit" id="submit">Submit</button>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>     
+
+    
+    
+   
+   <script type="module">
+      /*  const selectBtn = document.querySelector(".select-btn"),
+      items = document.querySelectorAll(".item");
+
+selectBtn.addEventListener("click", () => {
+    selectBtn.classList.toggle("open");
+});
+
+items.forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("checked");
+
+        let checked = document.querySelectorAll(".checked"),
+            btnText = document.querySelector(".btn-text");
+
+            if(checked && checked.length > 0){
+                btnText.innerText = `${checked.length} Selected`;
+            }else{
+                btnText.innerText = "Select Language";
+            }
+    });
+})*/
+
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+        import { getFirestore,collection,getDocs,setDoc,doc,addDoc,getDoc} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
+        //import { set,ref } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBjvk_raLlFLyMEANUS_KBlp7-6yj615mM",
+            authDomain: "project-4d7bc.firebaseapp.com",
+            projectId: "project-4d7bc",
+            storageBucket: "project-4d7bc.appspot.com",
+            messagingSenderId: "519355369103",
+            appId: "1:519355369103:web:6cf899e7be6142489952fa",
+            measurementId: "G-GQLMTQ8EXF"
+          };
+        
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db= getFirestore(app);
+        const auth=getAuth();
+        home.addEventListener('click',(e)=>
+        {
+            location.href="companyjob.html"
+        }
+        )
+    
+        submit.addEventListener('click',(e)=>
+        {
+            e.preventDefault();
+            //const user=userCredential.user;
+           // var uid=getAuth().currentUser.uid;
+           const selected=[];
+           const jobname=document.querySelector('#jobname').value;
+           var job=document.getElementById('jobname');
+            var quali=document.getElementById('quali').value;
+            var stream=document.getElementById('stream').value;
+            var preference=document.getElementById('preference').value;
+            const stream1=document.querySelector('#stream').value;
+            const quali1=document.querySelector('#quali').value;
+            const preference1=document.querySelector('#preference').value;
+            const year1=document.querySelector("#year").value;
+            for(var option of document.querySelector('#skills').options)
+            {
+                if(option.selected)
+                {
+                    selected.push(option.value);
+                }
+            }
+            console.log(selected[0])
+           /* if((react.checked==true))
+            {
+                const skill1=react;
+            }
+            console.log(stream,quali,preference);*/
+            let comapanyname1;
+            auth.onAuthStateChanged(user=>{
+            if(user){
+                console.log(user.uid)
+                const u=user.uid
+                async function GetADocument(){
+                var ref=doc(db,'signup-company',u);
+                const docSnap=await getDoc(ref);
+                if(docSnap.exists()){
+                  console.log(jobname)
+                  //const docref=doc(db,'company req',docSnap.data().cname);
+    //const colref=collection(docref,docSnap.data().cname)
+   setDoc(doc(db,'company req',docSnap.data().cname,docSnap.data().cname,jobname),{
+    skills:selected,
+    years_of_experience:year1,
+    qualification:quali1,
+   experience:preference1,
+  stream:stream1,
+   });
+   alert("requirement entered");
+                }
+                else{
+                    alert("no such company");
+                }
+                 }
+                 GetADocument()
+     
+               // const ref=setDoc(doc(dbc,'company req',u),{stream:stream1,qualification:quali1,preference:preference1});
+            }})
+            
+        }
+        )
+    
+    </script>
+
+</body>
+
+</html>
+<!-- end document-->

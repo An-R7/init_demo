@@ -1,0 +1,139 @@
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="ch.css">
+    </head>
+    <body>
+
+       <p class="result">RESULTS</p>
+
+        
+
+            
+
+            <ul id="company-list"></ul>
+
+            <!--for job name-->
+          <!---  <input type="text" id="result">-->
+
+        </div>
+        </body>
+        <script type="module">
+            
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+            import { getFirestore,getDocs,collection,doc,query,orderBy,getDoc,onSnapshot } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-firestore.js";
+            
+            const firebaseConfig = {
+              apiKey: "AIzaSyBjvk_raLlFLyMEANUS_KBlp7-6yj615mM",
+              authDomain: "project-4d7bc.firebaseapp.com",
+              projectId: "project-4d7bc",
+              storageBucket: "project-4d7bc.appspot.com",
+              messagingSenderId: "519355369103",
+              appId: "1:519355369103:web:3de933e0a607fe3f9952fa",
+              measurementId: "G-2XGKQR0H06"
+            };
+          
+            console.log("uuu")
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const db = getFirestore(app);
+            
+            const companyList = document.querySelector('#company-list');
+
+        // create element & render cafe
+            function renderCompany(doc1){
+                console.log("ys")
+                let li = document.createElement('li');
+                let name = document.createElement('span');
+                let city = document.createElement('span');
+                city.id="city";
+                li.id="li";
+                
+                //let button = document.createElement('button');
+                //button.innerHTML = "Open";
+                //button.type = "Submit";
+//console.log(doc.id)
+async function GetDocument(){
+                var ref=doc(db,'client-profile',doc1.id);
+                const docSnap=await getDoc(ref);
+                if(docSnap.exists()){
+                    console.log(docSnap.data().experience)
+                    name.textContent = docSnap.data().first_name+" "+docSnap.data().last_name;
+                    city.textContent=doc1.data().points;
+                }
+                
+                li.setAttribute('data-id', doc1.id);
+               
+                //city.textContent = doc.data().cid;
+        
+
+                li.appendChild(name);
+                li.appendChild(city);
+                //li.appendChild(button);
+
+                companyList.appendChild(li);
+            }
+            GetDocument()
+        }
+
+// getting data
+
+//const colref=collection(db,'todos1');
+                async function GetADocument(){
+                    
+                    var cname,jname;
+    var ref=doc(db,'todos1','name');
+    const docSnap2=await getDoc(ref);
+    if(docSnap2.exists()){
+        console.log("hhh")
+        cname=docSnap2.data().name;
+        //console.log(docSnap2.data().name)
+    }
+    var ref=doc(db,'todos1','jname');
+    const docSnap3=await getDoc(ref);
+    if(docSnap3.exists()){
+        jname=docSnap3.data().name;
+       // console.log(docSnap3.data().name)
+    }
+
+
+//for job name
+
+   /* let l=document.querySelector('#result');
+     l.value=jname;*/
+     
+     
+
+let colref=query(collection(db,'results',cname,jname),orderBy('points','desc'));
+
+
+    onSnapshot(colref,(querySnapshot)=>
+    {
+     querySnapshot.forEach((doc)=>
+     {console.log(doc.id);
+        renderCompany(doc);
+     ;});
+     });  
+
+        //const ref1= query(collection(db,'results',docSnap2.data().name,),orderBy('score'));
+  
+                
+            }
+    
+
+
+
+    GetADocument()
+
+            
+            
+            
+            
+
+
+    </script>
+
+        
+    
+</html>
